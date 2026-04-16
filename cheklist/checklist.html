@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>checklist</title>
+</head>
+<body>
+    <form id="formNC">
+        <input type="text" name="secao_documento" placeholder="Seção do documento">
+        <input type="text" name="descricao" placeholder="Descrição da não conformidade">
+        <input type="text" name="resultado" placeholder="Resultado encontrado">
+        <input type="datetime-local" name="data_hora_identificacao" placeholder="Data e hora da identificação">
+        <input type="text" name="classificacao_nc" placeholder="Classificação (baixa, média, alta)">
+        <input type="date" name="prazo_resolucao" placeholder="Prazo de resolução">
+        <input type="text" name="responsavel_resolucao" placeholder="Responsável pela resolução">
+        <input type="text" name="acao_corretiva" placeholder="Ação corretiva">
+        <input type="text" name="foi_resolvido" placeholder="Foi resolvido? (sim/não)">
+        <input type="datetime-local" name="data_hora_escalonamento" placeholder="Data de escalonamento">
+        <input type="datetime-local" name="data_hora_conclusao" placeholder="Data de conclusão">
+        <input type="text" name="status" placeholder="Status (aberto, fechado)">
+        <input type="hidden" name="id" id="id">
+    <button type="submit" >save</button>
+    </form>
+
+    <table>
+    <thead>
+        <tr>
+            <th>Número</th>
+            <th>Seção Documento</th>
+            <th>Descrição</th>
+            <th>Resultado</th>
+            <th>Data Identificação</th>
+            <th>Classificação</th>
+            <th>Prazo</th>
+            <th>Responsável</th>
+            <th>Ação Corretiva</th>
+            <th>Resolvido?</th>
+            <th>Escalonamento</th>
+            <th>Conclusão</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody id="tabelaDados"></tbody>
+</table>
+
+    <table class="tabela">
+    <tr>
+        <th colspan="2">Nº total de NCF</th>
+        <th id="totalNCF">0</th>
+    </tr>
+
+    <tr class="baixa">
+        <td>Baixa</td>
+        <td id="baixa">0</td>
+    </tr>
+
+    <tr class="media">
+        <td>Média</td>
+        <td id="media">0</td>
+    </tr>
+
+    <tr class="alta">
+        <td>Alta</td>
+        <td id="alta">0</td>
+    </tr>
+</table>
+
+<div class="aderencia">
+    Nº de pontos: <span id="totalItens">0</span>
+
+    Aderência:
+    <div id="faixa" class="verde">100%</div>
+</div>
+</body>
+    <script src="backend/js/inserir.js"></script>
+    <script src="backend/js/listar.js?v=99"></script>
+    <script src="backend/js/excluir.js"></script>
+    <script src="backend/js/calculo_aderencia.js"></script>
+</html>
